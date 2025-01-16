@@ -1,0 +1,1 @@
+fn main() {    let mut v = vec![1, 2, 3];    let ptr = v.as_mut_ptr();    unsafe {        // This is undefined behavior!        std::ptr::drop_in_place(ptr);    }    println!("v: {:?}", v); // This will likely panic}
